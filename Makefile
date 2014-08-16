@@ -5,7 +5,7 @@ go-rss2imap: *.go
 
 deps:
 	mkdir -p vendor
-	go get github.com/iand/feedparser
+	go get github.com/htr/feedparser
 	go get github.com/rakyll/globalconf
 	go get github.com/sloonz/go-mime-message
 	go get github.com/sloonz/go-qprintable
