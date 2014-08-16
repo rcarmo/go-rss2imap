@@ -1,25 +1,23 @@
-imapfeeder
-==========
+# go-rss2imap
 
-Feeds your imap account with feeds.
-
+A tweak of @htr's imapfeeder to match my rss2imap feature set.
 
 
-Quickstart
-----------
+## Quickstart
 
+Checkout the repository (all dependencies are included) and issue the `make` command to build.
 
-go get this repository and copy the sample configuration file to your $HOME:
+> The bundled `Makefile` also provides `pi` and `synology` targets for the Raspberry Pi and old Synology ARM5 NAS.
 
-```
-go get github.com/htr/imapfeeder
+## Configuration
 
-cp $GOPATH/src/github.com/htr/imapfeeder/imapfeeder.json.sample ~/.imapfeeder.json
-```
+For the moment, you should use the provided template (configuration will be refactored to live in `~/.config` soon):
+
+    cp imapfeeder.json.sample ~/.imapfeeder.json
 
 edit the configuration file:
 
-```
+```json
 {
     "cleanup": true,                // cleanup messages already seen and not flagged
     "folders": {                    // dictionary of folder names mapped to lists of feed urls
