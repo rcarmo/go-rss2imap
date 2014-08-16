@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/htr/feedparser"
+	"github.com/iand/feedparser"
 	mm "github.com/sloonz/go-mime-message"
 	qprintable "github.com/sloonz/go-qprintable"
 )
