@@ -17,7 +17,7 @@ For the moment, you should use the provided template (configuration will be refa
 
 edit the configuration file:
 
-```json
+```javascript
 {
     "cleanup": true,                // cleanup messages already seen and not flagged
     "folders": {                    // dictionary of folder names mapped to lists of feed urls
