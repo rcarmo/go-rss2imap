@@ -37,7 +37,7 @@ func pull() {
 	maybePanic(err)
 	homeDir := usr.HomeDir
 
-	appendLog, err = loadAppendLog(homeDir + "/.imapfeederlog.json")
+	appendLog, err = loadAppendLog(homeDir + "/.rss2imap.log")
 	maybePanic(err)
 
 	defer appendLog.Save()
@@ -100,7 +100,7 @@ func main() {
 	usr, err := user.Current()
 	maybePanic(err)
 	homeDir := usr.HomeDir
-	ctx, err = loadConfig(homeDir + "/.imapfeeder.json")
+	ctx, err = loadConfig(homeDir + "/.rss2imap.json")
 	maybePanic(err)
 
 	defer maybeDisconnect()

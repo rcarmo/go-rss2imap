@@ -1,6 +1,6 @@
 # go-rss2imap
 
-A tweak of @htr's imapfeeder to match my rss2imap feature set.
+A tweak of @htr's rss2imap to match my rss2imap feature set.
 
 
 ## Quickstart
@@ -13,7 +13,7 @@ Checkout the repository (all dependencies are included) and issue the `make` com
 
 For the moment, you should use the provided template (configuration will be refactored to live in `~/.config` soon):
 
-    cp imapfeeder.json.sample ~/.imapfeeder.json
+    cp rss2imap.json.sample ~/.rss2imap.json
 
 edit the configuration file:
 
@@ -45,20 +45,20 @@ edit the configuration file:
 pull all feeds:
 
 ```
-imapfeeder -pull
+rss2imap -pull
 ```
 
 just do a cleanup:
 
 ```
-imapfeeder -cleanup
+rss2imap -cleanup
 ```
 
 
 test how a feed is processed:
 
 ```
-imapfeeder -test-feed=feedurl
+rss2imap -test-feed=feedurl
 ```
 
 
@@ -68,7 +68,7 @@ Details
 
 ### imap and gmail
 
-When connected to a gmail imap server, imapfeeder uses the `X-GM-EXT-1` features:
+When connected to a gmail imap server, rss2imap uses the `X-GM-EXT-1` features:
 
  * when *duplicating* messages to other labels/mailboxes: store X-GM-LABELS vs COPY
  * when deleting messages (cleanup): store X-GM-LABELS \Trash vs store \Deleted
