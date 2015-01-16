@@ -4,6 +4,7 @@ A tweak of @htr's rss2imap to match my rss2imap feature set.
 
 Things that need fixing:
 
+* <strike>Decent templating</strike>
 * <strike>RSS items are always sent with the same From: address</strike>
 * RSS items are inserted with the current date rather than the item's date
 * Concurrency could be improved
