@@ -6,6 +6,9 @@ import (
 	"html/template"
 	"io"
 	"net/http"
+	"net/url"
+	"regexp"
+	"strings"
 	"time"
 
 	"github.com/htr/feedparser"
@@ -82,6 +85,18 @@ func itemToBody(feed *feedparser.Feed, item *feedparser.FeedItem) io.Reader {
 	return &doc
 }
 
+func fakeFromAddress(feed *feedparser.Feed) string {
+	nonWord := regexp.MustCompile("[\\W_]+")
+	whitespace := regexp.MustCompile("\\s+")
+	sanitized := strings.ToLower(whitespace.ReplaceAllString(nonWord.ReplaceAllString(feed.Title, ""), "_"))
+	u, err := url.Parse(feed.Link)
+	if err != nil {
+		panic(err)
+	}
+	from := fmt.Sprintf("<%s@%s>", sanitized, u.Host)
+	return from
+}
+
 func itemToMsg(feed *feedparser.Feed,
 	item *feedparser.FeedItem, body io.Reader) *mm.Message {
 
@@ -95,7 +110,7 @@ func itemToMsg(feed *feedparser.Feed,
 	} else {
 		author = feed.Title
 	}
-	msg.SetHeader("From", mm.EncodeWord(author)+" "+ctx.From)
+	msg.SetHeader("From", mm.EncodeWord(author)+" "+fakeFromAddress(feed))
 	msg.SetHeader("To", ctx.To)
 	return msg
 }
