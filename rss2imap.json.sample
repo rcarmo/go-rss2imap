@@ -10,7 +10,6 @@
         ]
     },
     "imapserver": "imap.server.tld",
-    "from": "<email@server.tld",
     "folderprefix": "feeds/",
     "to": "RSS <email@server.tld>",
     "labels": [],

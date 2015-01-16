@@ -36,7 +36,6 @@ edit the configuration file:
         ]
     },
     "imapserver": "imap.server.tld",  // imap server with tls support
-    "from": "<email@server.tld",      // "From" header to be appended to each feeditem Author
     "folderprefix": "feeds/",         // a folder prefix. an empty string is accepted
     "to": "<email@server.tld>",       // "To" header.
     "labels": [],                     // additional labels/folders to where each new message should be appended
