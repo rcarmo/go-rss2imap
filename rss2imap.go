@@ -37,7 +37,7 @@ func pull() {
 	maybePanic(err)
 	homeDir := usr.HomeDir
 
-	appendLog, err = loadAppendLog(homeDir + "/.rss2imap.log")
+	appendLog, err = loadAppendLog(homeDir + "/.rss2imap.state")
 	maybePanic(err)
 
 	defer appendLog.Save()

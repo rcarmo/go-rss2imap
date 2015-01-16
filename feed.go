@@ -126,13 +126,13 @@ func pullFeeds(feeds []Feed) {
 			continue
 		}
 
-		fmt.Println("checking...", feed.Url)
+		fmt.Println("FETCH", feed.Url)
 
 		msgDropper := func(f *feedparser.Feed, item *feedparser.FeedItem) {
 			if appendLog.Exists(item.Id) {
 				return
 			}
-			println("appending", item.Id, "to", feed.Folder)
+			println("APPEND", item.Id, feed.Folder)
 			body := itemToBody(f, item)
 			msg := itemToMsg(f, item, body)
 			imapSession.Append(feed.Folder, ctx.Labels, msg)

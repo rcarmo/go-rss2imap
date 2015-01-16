@@ -20,7 +20,7 @@ clean:
 	go fmt *.go
 
 pi:
-	GOARCH=arm GOARM=6 go build -o $(BINARY)
+	GOOS=linux GOARCH=arm GOARM=6 go build -o $(BINARY)
 
 synology:
-	GOARCH=arm GOARM=5 go build -o $(BINARY)
+	GOOS=linux GOARCH=arm GOARM=5 go build -o $(BINARY)
